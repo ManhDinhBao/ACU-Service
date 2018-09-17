@@ -1,0 +1,1968 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UserQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passWord" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserSave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="optLevel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="personName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="avatar" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="experiedDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="person" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserSaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserSaveResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupUserQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupUserQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GroupUserQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupUserSave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Person" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupUserSaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GroupUserSaveResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupUserDetailQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupUserDetailQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GroupUserDetailQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupUserDetailSave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Person" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupUserDetailSaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GroupUserDetailSaveResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CardQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CardQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CardQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CardSave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Person" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CardSaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CardSaveResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CardDetailQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CardDetailQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CardDetailQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CardDetailSave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Person" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CardDetailSaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CardDetailSaveResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupAccessQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupAccessQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GroupAccessQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupAccessSave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Person" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupAccessSaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GroupAccessSaveResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupAccessUQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupAccessUQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GroupAccessUQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupAccessUSave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupAccessId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Person" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupAccessUSaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GroupAccessUSaveResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupAccessLQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accessLevelId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupAccessLQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GroupAccessLQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupAccessLSave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupAccessId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accessLevelId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Person" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupAccessLSaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GroupAccessLSaveResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupAccessUGQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userGroupId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupAccessUGQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GroupAccessUGQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupAccessUGSave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupAccessId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userGroupId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Person" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupAccessUGSaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GroupAccessUGSaveResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccessLevelQry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accessLevelID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accessLevelName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccessLevelQryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccessLevelQryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccessLevelSave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accessLevelID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accessLevelName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Person" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccessLevelSaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccessLevelSaveResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccessLevelDQry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accessLevelID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccessLevelDQryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccessLevelDQryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccessLevelDSave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accessLevelID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="doorID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Person" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccessLevelDSaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccessLevelDSaveResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccessLevelSQry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accessLevelID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccessLevelSQryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccessLevelSQryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccessLevelSSave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accessLevelID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="scheduleID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Person" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccessLevelSSaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccessLevelSSaveResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoorQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="doorId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="doorName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deviceId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoorQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoorQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoorSave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="doorId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="doorName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deviceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="readerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inputNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="outputNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="relayNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Person" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoorSaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoorSaveResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScheduleQry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="scheduleId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="scheduleName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScheduleQryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ScheduleQryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScheduleSave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="scheduleId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="scheduleName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Person" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScheduleSaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ScheduleSaveResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PeriodQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="scheduleId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PeriodQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PeriodQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PeriodSave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ScheduleId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DayInWeek" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndTime" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Person" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PeriodSaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PeriodSaveResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeviceQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deviceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deviceName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deviceIP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeviceQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeviceQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeviceSave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deviceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deviceName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deviceIP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Person" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeviceSaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeviceSaveResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EventQry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eventId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EventQryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EventQryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EventSave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eventId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="eventDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="device" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="functionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="doorId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EventSaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EventSaveResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OperatorQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="optLevelid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="optLevelName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OperatorQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AttendanceQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="attendanceDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AttendanceQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AttendanceQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workingTag" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fromDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="toDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UserQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:UserQuery" />
+  </wsdl:message>
+  <wsdl:message name="UserQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:UserQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserSaveSoapIn">
+    <wsdl:part name="parameters" element="tns:UserSave" />
+  </wsdl:message>
+  <wsdl:message name="UserSaveSoapOut">
+    <wsdl:part name="parameters" element="tns:UserSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:GroupUserQuery" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:GroupUserQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserSaveSoapIn">
+    <wsdl:part name="parameters" element="tns:GroupUserSave" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserSaveSoapOut">
+    <wsdl:part name="parameters" element="tns:GroupUserSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserDetailQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:GroupUserDetailQuery" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserDetailQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:GroupUserDetailQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserDetailSaveSoapIn">
+    <wsdl:part name="parameters" element="tns:GroupUserDetailSave" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserDetailSaveSoapOut">
+    <wsdl:part name="parameters" element="tns:GroupUserDetailSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="CardQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:CardQuery" />
+  </wsdl:message>
+  <wsdl:message name="CardQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:CardQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="CardSaveSoapIn">
+    <wsdl:part name="parameters" element="tns:CardSave" />
+  </wsdl:message>
+  <wsdl:message name="CardSaveSoapOut">
+    <wsdl:part name="parameters" element="tns:CardSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="CardDetailQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:CardDetailQuery" />
+  </wsdl:message>
+  <wsdl:message name="CardDetailQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:CardDetailQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="CardDetailSaveSoapIn">
+    <wsdl:part name="parameters" element="tns:CardDetailSave" />
+  </wsdl:message>
+  <wsdl:message name="CardDetailSaveSoapOut">
+    <wsdl:part name="parameters" element="tns:CardDetailSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupAccessQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:GroupAccessQuery" />
+  </wsdl:message>
+  <wsdl:message name="GroupAccessQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:GroupAccessQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupAccessSaveSoapIn">
+    <wsdl:part name="parameters" element="tns:GroupAccessSave" />
+  </wsdl:message>
+  <wsdl:message name="GroupAccessSaveSoapOut">
+    <wsdl:part name="parameters" element="tns:GroupAccessSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupAccessUQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:GroupAccessUQuery" />
+  </wsdl:message>
+  <wsdl:message name="GroupAccessUQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:GroupAccessUQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupAccessUSaveSoapIn">
+    <wsdl:part name="parameters" element="tns:GroupAccessUSave" />
+  </wsdl:message>
+  <wsdl:message name="GroupAccessUSaveSoapOut">
+    <wsdl:part name="parameters" element="tns:GroupAccessUSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupAccessLQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:GroupAccessLQuery" />
+  </wsdl:message>
+  <wsdl:message name="GroupAccessLQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:GroupAccessLQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupAccessLSaveSoapIn">
+    <wsdl:part name="parameters" element="tns:GroupAccessLSave" />
+  </wsdl:message>
+  <wsdl:message name="GroupAccessLSaveSoapOut">
+    <wsdl:part name="parameters" element="tns:GroupAccessLSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupAccessUGQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:GroupAccessUGQuery" />
+  </wsdl:message>
+  <wsdl:message name="GroupAccessUGQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:GroupAccessUGQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupAccessUGSaveSoapIn">
+    <wsdl:part name="parameters" element="tns:GroupAccessUGSave" />
+  </wsdl:message>
+  <wsdl:message name="GroupAccessUGSaveSoapOut">
+    <wsdl:part name="parameters" element="tns:GroupAccessUGSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccessLevelQrySoapIn">
+    <wsdl:part name="parameters" element="tns:AccessLevelQry" />
+  </wsdl:message>
+  <wsdl:message name="AccessLevelQrySoapOut">
+    <wsdl:part name="parameters" element="tns:AccessLevelQryResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccessLevelSaveSoapIn">
+    <wsdl:part name="parameters" element="tns:AccessLevelSave" />
+  </wsdl:message>
+  <wsdl:message name="AccessLevelSaveSoapOut">
+    <wsdl:part name="parameters" element="tns:AccessLevelSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccessLevelDQrySoapIn">
+    <wsdl:part name="parameters" element="tns:AccessLevelDQry" />
+  </wsdl:message>
+  <wsdl:message name="AccessLevelDQrySoapOut">
+    <wsdl:part name="parameters" element="tns:AccessLevelDQryResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccessLevelDSaveSoapIn">
+    <wsdl:part name="parameters" element="tns:AccessLevelDSave" />
+  </wsdl:message>
+  <wsdl:message name="AccessLevelDSaveSoapOut">
+    <wsdl:part name="parameters" element="tns:AccessLevelDSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccessLevelSQrySoapIn">
+    <wsdl:part name="parameters" element="tns:AccessLevelSQry" />
+  </wsdl:message>
+  <wsdl:message name="AccessLevelSQrySoapOut">
+    <wsdl:part name="parameters" element="tns:AccessLevelSQryResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccessLevelSSaveSoapIn">
+    <wsdl:part name="parameters" element="tns:AccessLevelSSave" />
+  </wsdl:message>
+  <wsdl:message name="AccessLevelSSaveSoapOut">
+    <wsdl:part name="parameters" element="tns:AccessLevelSSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="DoorQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:DoorQuery" />
+  </wsdl:message>
+  <wsdl:message name="DoorQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:DoorQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="DoorSaveSoapIn">
+    <wsdl:part name="parameters" element="tns:DoorSave" />
+  </wsdl:message>
+  <wsdl:message name="DoorSaveSoapOut">
+    <wsdl:part name="parameters" element="tns:DoorSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ScheduleQrySoapIn">
+    <wsdl:part name="parameters" element="tns:ScheduleQry" />
+  </wsdl:message>
+  <wsdl:message name="ScheduleQrySoapOut">
+    <wsdl:part name="parameters" element="tns:ScheduleQryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ScheduleSaveSoapIn">
+    <wsdl:part name="parameters" element="tns:ScheduleSave" />
+  </wsdl:message>
+  <wsdl:message name="ScheduleSaveSoapOut">
+    <wsdl:part name="parameters" element="tns:ScheduleSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="PeriodQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:PeriodQuery" />
+  </wsdl:message>
+  <wsdl:message name="PeriodQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:PeriodQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="PeriodSaveSoapIn">
+    <wsdl:part name="parameters" element="tns:PeriodSave" />
+  </wsdl:message>
+  <wsdl:message name="PeriodSaveSoapOut">
+    <wsdl:part name="parameters" element="tns:PeriodSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeviceQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:DeviceQuery" />
+  </wsdl:message>
+  <wsdl:message name="DeviceQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:DeviceQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeviceSaveSoapIn">
+    <wsdl:part name="parameters" element="tns:DeviceSave" />
+  </wsdl:message>
+  <wsdl:message name="DeviceSaveSoapOut">
+    <wsdl:part name="parameters" element="tns:DeviceSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="EventQrySoapIn">
+    <wsdl:part name="parameters" element="tns:EventQry" />
+  </wsdl:message>
+  <wsdl:message name="EventQrySoapOut">
+    <wsdl:part name="parameters" element="tns:EventQryResponse" />
+  </wsdl:message>
+  <wsdl:message name="EventSaveSoapIn">
+    <wsdl:part name="parameters" element="tns:EventSave" />
+  </wsdl:message>
+  <wsdl:message name="EventSaveSoapOut">
+    <wsdl:part name="parameters" element="tns:EventSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="OperatorQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:OperatorQuery" />
+  </wsdl:message>
+  <wsdl:message name="OperatorQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:OperatorQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="AttendanceQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:AttendanceQuery" />
+  </wsdl:message>
+  <wsdl:message name="AttendanceQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:AttendanceQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:LoginQuery" />
+  </wsdl:message>
+  <wsdl:message name="LoginQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:LoginQueryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSACUSoap">
+    <wsdl:operation name="UserQuery">
+      <wsdl:input message="tns:UserQuerySoapIn" />
+      <wsdl:output message="tns:UserQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserSave">
+      <wsdl:input message="tns:UserSaveSoapIn" />
+      <wsdl:output message="tns:UserSaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserQuery">
+      <wsdl:input message="tns:GroupUserQuerySoapIn" />
+      <wsdl:output message="tns:GroupUserQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserSave">
+      <wsdl:input message="tns:GroupUserSaveSoapIn" />
+      <wsdl:output message="tns:GroupUserSaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserDetailQuery">
+      <wsdl:input message="tns:GroupUserDetailQuerySoapIn" />
+      <wsdl:output message="tns:GroupUserDetailQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserDetailSave">
+      <wsdl:input message="tns:GroupUserDetailSaveSoapIn" />
+      <wsdl:output message="tns:GroupUserDetailSaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CardQuery">
+      <wsdl:input message="tns:CardQuerySoapIn" />
+      <wsdl:output message="tns:CardQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CardSave">
+      <wsdl:input message="tns:CardSaveSoapIn" />
+      <wsdl:output message="tns:CardSaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CardDetailQuery">
+      <wsdl:input message="tns:CardDetailQuerySoapIn" />
+      <wsdl:output message="tns:CardDetailQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CardDetailSave">
+      <wsdl:input message="tns:CardDetailSaveSoapIn" />
+      <wsdl:output message="tns:CardDetailSaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessQuery">
+      <wsdl:input message="tns:GroupAccessQuerySoapIn" />
+      <wsdl:output message="tns:GroupAccessQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessSave">
+      <wsdl:input message="tns:GroupAccessSaveSoapIn" />
+      <wsdl:output message="tns:GroupAccessSaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessUQuery">
+      <wsdl:input message="tns:GroupAccessUQuerySoapIn" />
+      <wsdl:output message="tns:GroupAccessUQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessUSave">
+      <wsdl:input message="tns:GroupAccessUSaveSoapIn" />
+      <wsdl:output message="tns:GroupAccessUSaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessLQuery">
+      <wsdl:input message="tns:GroupAccessLQuerySoapIn" />
+      <wsdl:output message="tns:GroupAccessLQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessLSave">
+      <wsdl:input message="tns:GroupAccessLSaveSoapIn" />
+      <wsdl:output message="tns:GroupAccessLSaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessUGQuery">
+      <wsdl:input message="tns:GroupAccessUGQuerySoapIn" />
+      <wsdl:output message="tns:GroupAccessUGQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessUGSave">
+      <wsdl:input message="tns:GroupAccessUGSaveSoapIn" />
+      <wsdl:output message="tns:GroupAccessUGSaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccessLevelQry">
+      <wsdl:input message="tns:AccessLevelQrySoapIn" />
+      <wsdl:output message="tns:AccessLevelQrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccessLevelSave">
+      <wsdl:input message="tns:AccessLevelSaveSoapIn" />
+      <wsdl:output message="tns:AccessLevelSaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccessLevelDQry">
+      <wsdl:input message="tns:AccessLevelDQrySoapIn" />
+      <wsdl:output message="tns:AccessLevelDQrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccessLevelDSave">
+      <wsdl:input message="tns:AccessLevelDSaveSoapIn" />
+      <wsdl:output message="tns:AccessLevelDSaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccessLevelSQry">
+      <wsdl:input message="tns:AccessLevelSQrySoapIn" />
+      <wsdl:output message="tns:AccessLevelSQrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccessLevelSSave">
+      <wsdl:input message="tns:AccessLevelSSaveSoapIn" />
+      <wsdl:output message="tns:AccessLevelSSaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DoorQuery">
+      <wsdl:input message="tns:DoorQuerySoapIn" />
+      <wsdl:output message="tns:DoorQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DoorSave">
+      <wsdl:input message="tns:DoorSaveSoapIn" />
+      <wsdl:output message="tns:DoorSaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleQry">
+      <wsdl:input message="tns:ScheduleQrySoapIn" />
+      <wsdl:output message="tns:ScheduleQrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleSave">
+      <wsdl:input message="tns:ScheduleSaveSoapIn" />
+      <wsdl:output message="tns:ScheduleSaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PeriodQuery">
+      <wsdl:input message="tns:PeriodQuerySoapIn" />
+      <wsdl:output message="tns:PeriodQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PeriodSave">
+      <wsdl:input message="tns:PeriodSaveSoapIn" />
+      <wsdl:output message="tns:PeriodSaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceQuery">
+      <wsdl:input message="tns:DeviceQuerySoapIn" />
+      <wsdl:output message="tns:DeviceQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceSave">
+      <wsdl:input message="tns:DeviceSaveSoapIn" />
+      <wsdl:output message="tns:DeviceSaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EventQry">
+      <wsdl:input message="tns:EventQrySoapIn" />
+      <wsdl:output message="tns:EventQrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EventSave">
+      <wsdl:input message="tns:EventSaveSoapIn" />
+      <wsdl:output message="tns:EventSaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OperatorQuery">
+      <wsdl:input message="tns:OperatorQuerySoapIn" />
+      <wsdl:output message="tns:OperatorQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AttendanceQuery">
+      <wsdl:input message="tns:AttendanceQuerySoapIn" />
+      <wsdl:output message="tns:AttendanceQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginQuery">
+      <wsdl:input message="tns:LoginQuerySoapIn" />
+      <wsdl:output message="tns:LoginQuerySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSACUSoap" type="tns:WSACUSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UserQuery">
+      <soap:operation soapAction="http://tempuri.org/UserQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserSave">
+      <soap:operation soapAction="http://tempuri.org/UserSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserQuery">
+      <soap:operation soapAction="http://tempuri.org/GroupUserQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserSave">
+      <soap:operation soapAction="http://tempuri.org/GroupUserSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserDetailQuery">
+      <soap:operation soapAction="http://tempuri.org/GroupUserDetailQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserDetailSave">
+      <soap:operation soapAction="http://tempuri.org/GroupUserDetailSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardQuery">
+      <soap:operation soapAction="http://tempuri.org/CardQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardSave">
+      <soap:operation soapAction="http://tempuri.org/CardSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardDetailQuery">
+      <soap:operation soapAction="http://tempuri.org/CardDetailQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardDetailSave">
+      <soap:operation soapAction="http://tempuri.org/CardDetailSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessQuery">
+      <soap:operation soapAction="http://tempuri.org/GroupAccessQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessSave">
+      <soap:operation soapAction="http://tempuri.org/GroupAccessSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessUQuery">
+      <soap:operation soapAction="http://tempuri.org/GroupAccessUQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessUSave">
+      <soap:operation soapAction="http://tempuri.org/GroupAccessUSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessLQuery">
+      <soap:operation soapAction="http://tempuri.org/GroupAccessLQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessLSave">
+      <soap:operation soapAction="http://tempuri.org/GroupAccessLSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessUGQuery">
+      <soap:operation soapAction="http://tempuri.org/GroupAccessUGQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessUGSave">
+      <soap:operation soapAction="http://tempuri.org/GroupAccessUGSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccessLevelQry">
+      <soap:operation soapAction="http://tempuri.org/AccessLevelQry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccessLevelSave">
+      <soap:operation soapAction="http://tempuri.org/AccessLevelSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccessLevelDQry">
+      <soap:operation soapAction="http://tempuri.org/AccessLevelDQry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccessLevelDSave">
+      <soap:operation soapAction="http://tempuri.org/AccessLevelDSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccessLevelSQry">
+      <soap:operation soapAction="http://tempuri.org/AccessLevelSQry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccessLevelSSave">
+      <soap:operation soapAction="http://tempuri.org/AccessLevelSSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoorQuery">
+      <soap:operation soapAction="http://tempuri.org/DoorQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoorSave">
+      <soap:operation soapAction="http://tempuri.org/DoorSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleQry">
+      <soap:operation soapAction="http://tempuri.org/ScheduleQry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleSave">
+      <soap:operation soapAction="http://tempuri.org/ScheduleSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PeriodQuery">
+      <soap:operation soapAction="http://tempuri.org/PeriodQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PeriodSave">
+      <soap:operation soapAction="http://tempuri.org/PeriodSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceQuery">
+      <soap:operation soapAction="http://tempuri.org/DeviceQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceSave">
+      <soap:operation soapAction="http://tempuri.org/DeviceSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EventQry">
+      <soap:operation soapAction="http://tempuri.org/EventQry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EventSave">
+      <soap:operation soapAction="http://tempuri.org/EventSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OperatorQuery">
+      <soap:operation soapAction="http://tempuri.org/OperatorQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AttendanceQuery">
+      <soap:operation soapAction="http://tempuri.org/AttendanceQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginQuery">
+      <soap:operation soapAction="http://tempuri.org/LoginQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSACUSoap12" type="tns:WSACUSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UserQuery">
+      <soap12:operation soapAction="http://tempuri.org/UserQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserSave">
+      <soap12:operation soapAction="http://tempuri.org/UserSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserQuery">
+      <soap12:operation soapAction="http://tempuri.org/GroupUserQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserSave">
+      <soap12:operation soapAction="http://tempuri.org/GroupUserSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserDetailQuery">
+      <soap12:operation soapAction="http://tempuri.org/GroupUserDetailQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserDetailSave">
+      <soap12:operation soapAction="http://tempuri.org/GroupUserDetailSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardQuery">
+      <soap12:operation soapAction="http://tempuri.org/CardQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardSave">
+      <soap12:operation soapAction="http://tempuri.org/CardSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardDetailQuery">
+      <soap12:operation soapAction="http://tempuri.org/CardDetailQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardDetailSave">
+      <soap12:operation soapAction="http://tempuri.org/CardDetailSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessQuery">
+      <soap12:operation soapAction="http://tempuri.org/GroupAccessQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessSave">
+      <soap12:operation soapAction="http://tempuri.org/GroupAccessSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessUQuery">
+      <soap12:operation soapAction="http://tempuri.org/GroupAccessUQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessUSave">
+      <soap12:operation soapAction="http://tempuri.org/GroupAccessUSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessLQuery">
+      <soap12:operation soapAction="http://tempuri.org/GroupAccessLQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessLSave">
+      <soap12:operation soapAction="http://tempuri.org/GroupAccessLSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessUGQuery">
+      <soap12:operation soapAction="http://tempuri.org/GroupAccessUGQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupAccessUGSave">
+      <soap12:operation soapAction="http://tempuri.org/GroupAccessUGSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccessLevelQry">
+      <soap12:operation soapAction="http://tempuri.org/AccessLevelQry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccessLevelSave">
+      <soap12:operation soapAction="http://tempuri.org/AccessLevelSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccessLevelDQry">
+      <soap12:operation soapAction="http://tempuri.org/AccessLevelDQry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccessLevelDSave">
+      <soap12:operation soapAction="http://tempuri.org/AccessLevelDSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccessLevelSQry">
+      <soap12:operation soapAction="http://tempuri.org/AccessLevelSQry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccessLevelSSave">
+      <soap12:operation soapAction="http://tempuri.org/AccessLevelSSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoorQuery">
+      <soap12:operation soapAction="http://tempuri.org/DoorQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoorSave">
+      <soap12:operation soapAction="http://tempuri.org/DoorSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleQry">
+      <soap12:operation soapAction="http://tempuri.org/ScheduleQry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleSave">
+      <soap12:operation soapAction="http://tempuri.org/ScheduleSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PeriodQuery">
+      <soap12:operation soapAction="http://tempuri.org/PeriodQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PeriodSave">
+      <soap12:operation soapAction="http://tempuri.org/PeriodSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceQuery">
+      <soap12:operation soapAction="http://tempuri.org/DeviceQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceSave">
+      <soap12:operation soapAction="http://tempuri.org/DeviceSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EventQry">
+      <soap12:operation soapAction="http://tempuri.org/EventQry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EventSave">
+      <soap12:operation soapAction="http://tempuri.org/EventSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OperatorQuery">
+      <soap12:operation soapAction="http://tempuri.org/OperatorQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AttendanceQuery">
+      <soap12:operation soapAction="http://tempuri.org/AttendanceQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginQuery">
+      <soap12:operation soapAction="http://tempuri.org/LoginQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSACU">
+    <wsdl:port name="WSACUSoap" binding="tns:WSACUSoap">
+      <soap:address location="http://localhost/ServicesACU/WSACU.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSACUSoap12" binding="tns:WSACUSoap12">
+      <soap12:address location="http://localhost/ServicesACU/WSACU.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,13 @@
+﻿Installing assembly 'C:\Users\Admin\source\repos\ACUService\ACUService\bin\Debug\ACUService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\Admin\source\repos\ACUService\ACUService\bin\Debug\ACUService.InstallLog
+   assemblypath = C:\Users\Admin\source\repos\ACUService\ACUService\bin\Debug\ACUService.exe
+Installing service LefaACUServices...
+Service LefaACUServices has been successfully installed.
+Creating EventLog source LefaACUServices in log Application...
+Committing assembly 'C:\Users\Admin\source\repos\ACUService\ACUService\bin\Debug\ACUService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\Admin\source\repos\ACUService\ACUService\bin\Debug\ACUService.InstallLog
+   assemblypath = C:\Users\Admin\source\repos\ACUService\ACUService\bin\Debug\ACUService.exe

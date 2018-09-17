@@ -1,0 +1,9 @@
+C:\Users\Admin\source\repos\ACUService\ACUService\obj\Debug\ACUService.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\ACUService\ACUService\obj\Debug\ACUService.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\ACUService\ACUService\bin\Debug\ACUService.exe.config
+C:\Users\Admin\source\repos\ACUService\ACUService\bin\Debug\ACUService.exe
+C:\Users\Admin\source\repos\ACUService\ACUService\bin\Debug\ACUService.pdb
+C:\Users\Admin\source\repos\ACUService\ACUService\obj\Debug\ACUService.exe
+C:\Users\Admin\source\repos\ACUService\ACUService\obj\Debug\ACUService.pdb
+C:\Users\Admin\source\repos\ACUService\ACUService\obj\Debug\ACUService.ProjectInstaller.resources
+C:\Users\Admin\source\repos\ACUService\ACUService\obj\Debug\ACUService.csproj.GenerateResource.cache
